@@ -1,0 +1,15 @@
+version: "3"
+services: 
+    webhook:
+      image: jeffail/benthos
+      volumes:
+      - "./webhook.yaml:/benthos.yaml"
+      ports:
+      - "4195:4195"
+    vigil:
+      image: valeriansaliou/vigil:v1.12.1
+      command: vigil -c /opt/config.cfg
+      volumes: 
+      - "./config.cfg:/opt/config.cfg"
+      ports:
+      - "8080:8080"
