@@ -1,11 +1,11 @@
 version: "3"
 services: 
     webhook:
-      image: jeffail/benthos
-      volumes:
-      - "./webhook.yaml:/benthos.yaml"
+      build: 
+        context: ./webhook
+        dockerfile: ./Dockerfile
       ports:
-      - "4195:4195"
+      - "3000:3000"
     vigil:
       image: dalongrong/vigil:v1.12.1
       command: vigil -c /opt/config.cfg
