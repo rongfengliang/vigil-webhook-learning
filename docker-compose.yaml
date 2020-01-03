@@ -7,7 +7,7 @@ services:
       ports:
       - "4195:4195"
     vigil:
-      image: valeriansaliou/vigil:v1.12.1
+      image: dalongrong/vigil:v1.12.1
       command: vigil -c /opt/config.cfg
       volumes: 
       - "./config.cfg:/opt/config.cfg"
