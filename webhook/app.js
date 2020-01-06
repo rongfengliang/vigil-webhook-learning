@@ -13,7 +13,7 @@ fastify.register(require('fastify-swagger'), {
       description: 'webhok alert',
       version: '0.1.0'
     },
-    host: 'localhost',
+    host: 'localhost:3000',
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json'],
@@ -60,7 +60,7 @@ fastify.post('/', {
   }
 }, (request, reply) => {
   request.log.info(JSON.stringify(request.body))
-  reply.send({ hello: JSON.stringify(request.body) })
+  reply.send({ status: JSON.stringify(request.body) })
 })
 
 fastify.ready(err => {
