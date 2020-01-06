@@ -1,5 +1,6 @@
 FROM node:12.14.0-alpine3.9
 WORKDIR /app
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk add --no-cache tini
 RUN  yarn global add 0x
 COPY .env /app/.env
