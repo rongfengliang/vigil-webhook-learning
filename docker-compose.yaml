@@ -1,9 +1,12 @@
-version: "3"
+version: "3.7"
 services: 
     webhook:
       build: 
         context: ./webhook
         dockerfile: ./Dockerfile
+      init: true
+      volumes: 
+      - "./flame:/app/flame"
       ports:
       - "3000:3000"
     vigil:
