@@ -4,7 +4,7 @@ services:
       build: 
         context: ./webhook
         dockerfile: ./Dockerfile
-      init: true
+      # init: true
       volumes: 
       - "./flame:/app/flame"
       ports:

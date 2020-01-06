@@ -9,8 +9,8 @@ fastify.register(require('fastify-swagger'), {
   routePrefix: '/docs',
   swagger: {
     info: {
-      title: 'webhok alert',
-      description: 'webhok alert',
+      title: 'webhook alert',
+      description: 'webhook alert',
       version: '0.1.0'
     },
     host: 'localhost:3000',
@@ -18,7 +18,7 @@ fastify.register(require('fastify-swagger'), {
     consumes: ['application/json'],
     produces: ['application/json'],
     tags: [
-      { name: 'webhook', description: 'webhok alert' }
+      { name: 'webhook', description: 'webhook alert' }
     ]
   },
   exposeRoute: true
@@ -63,10 +63,6 @@ fastify.post('/', {
   reply.send({ status: JSON.stringify(request.body) })
 })
 
-fastify.ready(err => {
-  if (err) throw err
-  fastify.swagger()
-})
 // Run the server!
 fastify.listen(3000, "0.0.0.0", (err, address) => {
   if (err) throw err
