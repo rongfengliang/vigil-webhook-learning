@@ -6,7 +6,7 @@
   "dependencies": {
     "cache-manager": "^2.10.1",
     "dotenv": "^8.2.0",
-    "fastify": "^2.11.0",
+    "fastify": "^2.15.1",
     "fastify-swagger": "^2.5.0"
   },
   "scripts": {
